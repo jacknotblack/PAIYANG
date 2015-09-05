@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="Jack Cheng">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> 
+
+  <title>百揚資訊武功祕笈(Jack製作)</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+  <style>body {padding-top: 70px}</style>
+
+  <style>H2 { text-align: center }</style>
+  <style>H5 { text-align: center }</style>
+  <style>H3 { text-align: center }</style>
+  <style>div.panel-body {padding-left:5px;padding-right:5px}</style>
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script>
+      var shiftWindow = function() { scrollBy(0, -80) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+
+    </head>
+
+    <body>
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="workdoc.html">百揚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">二聯式收銀機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="3100.html"><H5>TK3100/3200</H5></a></li>
+                <li class="pro"><a href="TK3200peripheral.html"><H5>3200連結</H5></a></li>
+                <li><a href="A520.html"><H5>A-520</H5></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">一聯式收據機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="SEG1.html"><H5>SE-G1</H5></a></li>
+                <li><a href="SES300.html"><H5>SE-S300</H5></a></li>
+                <li><a href="6600.html"><H5>AM6600</H5></a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+       </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+   </nav>
+
+   <div class="container-fluid">                                                                                                  
+    <div class="row">              
+
+      <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="padding-top:0">
+        <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="position:fixed;left: 0;padding-right:0;height:85%;overflow:scroll">
+          <h3 style="margin-left:-25px;margin-top:10px">POS</h3>
+
+          <ul class="nav nav-pills nav-stacked" style="left:-13px; padding-right:0" id="propill">
+              <li class="active" style="left:-13px; padding-right:0" id="clientmode"><a onclick="hidepro();"  data-toggle="tab" aria-expanded="true"><H5 style="margin-top: 0px;margin-bottom: 0px">客戶版</H5></a></li>
+              <li class="disabled" style="left:-13px; padding-right:0" id="promode"><a aria-expanded="false" ><H5 style="margin-top: 0px;margin-bottom: 0px">專業版</H5></a></li>
+              
+            </ul>
+
+          <form class="form" role="form" style="padding-right:0">
+
+              <div class="form-group">
+                <input type="password" class="form-control" id="pwd" placeholder="密碼" style="margin-left:-13px; padding-right:0">
+                                    
+                <button type="submit" id="submitpwd" class="btn btn-default btn-block" style="margin-left:-13px"><H5 style="margin-top: 0px;margin-bottom: 0px">送出</H5></button>
+              </div>
+            </form> 
+
+          <div class="btn-group-vertical btn-block" style="left:-13px; padding-right:0">
+                        <a href="#practice" class="btn btn-info" style="white-space: normal">練習</a>
+            <a href="#adminacc" class="btn btn-primary pro" style="white-space: normal">萬用帳號</a>
+            <a href="#splitprint" class="btn btn-primary pro" style="white-space: normal">出菜單分單</a>
+            <a href="#demoperiod" class="btn btn-primary pro" style="white-space: normal">展示時間</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="content col-xs-8 col-sm-9 col-lg-10" style="padding-right:0;padding-left:0">
+
+         <div class="col-sm-6 col-lg-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <H5 id="practice" style="margin-top: 0px; margin-bottom: 0px">練習模式</H5>
+            </div>
+            <div class="panel-body">
+              實體外接鍵盤按[Home]可開關
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 pro">
+          <div class="panel panel-primary pro">
+            <div class="panel-heading">
+              <H5 id="adminacc" style="margin-top: 0px; margin-bottom: 0px">萬用帳號</H5>
+            </div>
+            <div class="panel-body">
+              帳號: WINHOME<br>
+              密碼: 12665543
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 pro">
+          <div class="panel panel-primary pro">
+            <div class="panel-heading">
+              <H5 id="splitprint" style="margin-top: 0px; margin-bottom: 0px">出菜單分單</H5>
+            </div>
+            <div class="panel-body">
+              餐桌系統設定<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>各式印表機設定<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><br>
+              設定為單項單量逐張列印<br>
+              <span class="descr">
+                一張單只印一個品項 數量1<br>
+                數量為2則印2張<br>
+              </span>
+              <span class="eg">
+                例：品項Ax2 品項Bx3<br>
+                則出5張單<br><br>
+              </span>
+
+              例外商品設定<br>
+              <span class="descr">
+                同品項無論數量都印同一張<br> 
+                不同品項仍分開列印<br>
+              </span>
+              <span class="eg">
+                例：品項Ax2 品項Bx3<br>
+                則出A B各一張共2張單
+              </span>
+            </div>
+          </div>
+        </div>
+
+<div class="col-sm-6 col-lg-4 pro">
+          <div class="panel panel-primary pro">
+            <div class="panel-heading">
+              <H5 id="demoperiod" style="margin-top: 0px; margin-bottom: 0px">展延展示日期</H5>
+            </div>
+            <div class="panel-body">
+              WHPOS303資料->資料庫工具<br>
+              資料庫: data1.mdb 密碼: kpos<br>
+              開啟資料庫<br>
+              資料表: sys 欄位:demodate<br>
+              填入八碼日期
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+    $('.collapse.navbar-collapse').on('shown.bs.collapse', function(){
+      $('.dropdown').addClass('open');
+    });
+    </script>
+    
+    <script>
+    $('.dropdown-menu a').on('click', function(){
+      $('#bs-example-navbar-collapse-1').collapse('hide');
+    });
+    </script>
+
+    <script>
+    function hidepro() {
+      $(".pro").hide();
+    }
+    </script>
+
+    <script>
+    function showpro() {
+      $(".pro").show();
+    }
+    </script>
+
+    <script>
+    function scroll_if_anchor(href) {
+      href = typeof(href) == "string" ? href : $(this).attr("href");
+
+    // If href missing, ignore
+    if(!href) return;
+
+    // You could easily calculate this dynamically if you prefer
+    var fromTop = 75;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+    // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+    var $target = $(href);
+
+    // Older browsers without pushState might flicker here, as they momentarily
+    // jump to the wrong position (IE < 10)
+    if($target.length) {
+      $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+      if(history && "pushState" in history) {
+        history.pushState({}, document.title, window.location.pathname + href);
+        return false;
+      }
+    }
+  }    
+
+
+// When our page loads, check to see if it contains and anchor
+scroll_if_anchor(window.location.hash);
+
+// Intercept all anchor clicks
+$("body").on("click", "a[href^='#']", scroll_if_anchor);
+</script>
+
+<script>
+hidepro();
+
+if (document.cookie=='pwd=111'){ 
+  $('ul.nav-pills li.active').removeClass('active');
+  $('#promode').addClass('active');
+  showpro();
+};
+
+$('#submitpwd').on ('click', function () {
+document.cookie="pwd="+$('#pwd').val()+";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="Jack Cheng">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> 
+
+  <title>百揚資訊武功祕笈(Jack製作)</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+  <style>body {padding-top: 70px}</style>
+  <style>H2 { text-align: center }</style>
+  <style>H5 { text-align: center }</style>
+  <style>H3 { text-align: center }</style>
+  <style>div.panel-body {padding-left:5px;padding-right:5px}</style>
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script>
+      var shiftWindow = function() { scrollBy(0, -80) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+
+    </head>
+
+    <body>
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="workdoc.html">百揚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+             <li><a href="./POS.html">POS</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">二聯式收銀機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="pro"><a href="TK3200peripheral.html"><H5>3200連結</H5></a></li>
+                <li><a href="A520.html"><H5>A-520</H5></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">一聯式收據機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="SEG1.html"><H5>SE-G1</H5></a></li>
+                <li><a href="SES300.html"><H5>SE-S300</H5></a></li>
+                <li><a href="6600.html"><H5>AM6600</H5></a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">                     
+
+        <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="padding-top:0">
+          <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="position:fixed;left: 0;padding-right:0;height:85%;overflow:scroll">
+            <h3 style="margin-left:-25px;margin-top:10px">TK3100<br>TK3200</h3>
+
+            <ul class="nav nav-pills nav-stacked" style="left:-13px; padding-right:0" id="propill">
+              <li class="active" style="left:-13px; padding-right:0" id="clientmode"><a onclick="hidepro();"  data-toggle="tab" aria-expanded="true"><H5 style="margin-top: 0px;margin-bottom: 0px">客戶版</H5></a></li>
+              <li class="disabled" style="left:-13px; padding-right:0" id="promode"><a aria-expanded="false" ><H5 style="margin-top: 0px;margin-bottom: 0px">專業版</H5></a></li>
+              
+            </ul>
+
+            <form class="form" role="form" style="padding-right:0">
+
+              <div class="form-group">
+                <input type="password" class="form-control" id="pwd" placeholder="密碼" style="margin-left:-13px; padding-right:0">
+                                    
+                <button type="submit" id="submitpwd" class="btn btn-default btn-block" style="margin-left:-13px"><H5 style="margin-top: 0px;margin-bottom: 0px">送出</H5></button>
+              </div>
+            </form> 
+
+            <div class="btn-group-vertical btn-block" style="left:-13px; padding-right:0">
+              <a href="#PLUtitle" class="btn btn-info" style="white-space: normal">品項名稱</a>
+              <a href="#PLUprice" class="btn btn-info" style="white-space: normal">品項價格</a>
+              <a href="#comptitlemode" class="btn btn-info" style="white-space: normal">抬頭模式<br>文字/圖章</a>
+              <a href="#comptitle" class="btn btn-info" style="white-space: normal">公司抬頭</a>
+              <a href="#discount" class="btn btn-info" style="white-space: normal">固定折扣/折讓</a>
+              <a href="#errorcode" class="btn btn-info" style="white-space: normal">錯誤代碼</a>
+              <a href="#reset" class="btn btn-primary pro" style="white-space: normal">歸零</a>
+              <a href="#transient" class="btn btn-primary pro" style="white-space: normal">暫態</a>
+              <a href="#clearrecord" class="btn btn-primary pro" style="white-space: normal">清GT帳</a>
+              <a href="#machinenum" class="btn btn-primary pro" style="white-space: normal">台號機號</a>
+              <a href="#datetime" class="btn btn-primary pro" style="white-space: normal">日期時間</a>
+              <a href="#mode" class="btn btn-primary pro" style="white-space: normal">發票式/收據式</a>
+              <a href="#CF" class="btn btn-primary pro" style="white-space: normal">CF卡</a>
+              <a href="#PLUspecial" class="btn btn-primary pro" style="white-space: normal">品項特殊設定</a>
+              <a href="#scan" class="btn btn-primary pro" style="white-space: normal">掃描</a>
+              <a href="#keyboard" class="btn btn-primary pro" style="white-space: normal">鍵盤</a>
+              <a href="#addPLU" class="btn btn-primary pro" style="white-space: normal">增設PLU/部門</a>
+              <a href="#printsetup" class="btn btn-primary pro" style="white-space: normal">查看設定</a>
+              <a href="#report" class="btn btn-primary pro" style="white-space: normal">報表設定</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content col-xs-8 col-sm-9 col-lg-10" style="padding-right:0;padding-left:0">
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <H5 id="PLUtitle" style="margin-top: 0px; margin-bottom: 0px">設定品項中文名稱</H5>
+              </div>
+              <div class="panel-body">
+                查品項中文字碼<br>
+                鑰匙轉設定<br>
+                2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>欲設定之PLU鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+                <span class="eg">
+                  例：(蛋糕)179.74.191.124.<br>
+                </span>
+                <span class="descr">
+                  注意不能漏掉最後的[ . ]
+                </span><br><br>
+
+                <span class="descr">取消品項文字</span><br>
+                2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[ . ]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <H5 id="PLUprice" style="margin-top: 0px; margin-bottom: 0px">設定品項固定價格</H5>
+              </div>
+              <div class="panel-body">
+                鑰匙轉設定<br>
+                1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計>價格<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+              </div>
+
+            </div>
+          </div>
+
+          <div class="clearfix visible-sm-block"></div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <H5 id="comptitlemode" style="margin-top: 0px; margin-bottom: 0px">抬頭模式 文字/圖章</H5>
+              </div>
+              <div class="panel-body">
+                <span class="descr">文字模式<br></span>
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2122<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1000000000<span class="descr">（9個0）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+                <span class="descr">圖章模式<br></span>
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2122<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2000000000<span class="descr">（9個0）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="clearfix visible-lg-block"></div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <H5 id="comptitle" style="margin-top: 0px; margin-bottom: 0px">設定公司抬頭</H5>
+              </div>
+              <div class="panel-body">
+               查公司抬頭中文字碼<br>
+               鑰匙轉設定<br>
+               <span class="descr">第一行：抬頭 </span>2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計>0132<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[現金]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+               <span class="eg">
+                例：百揚 166.202.180.173.<br>
+              </span>
+              <span class="descr">
+                注意不能漏掉最後的[ . ]<br><br>
+              </span>
+              <span class="descr">第二行：統編 </span>2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計>0232<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[現金]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+              <span class="descr">第三行：地址 </span>2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計>0332<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[現金]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+              <span class="descr">第四行：電話 </span>2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計>0432<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[現金]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+              <span class="descr">取消文字 字碼改成24個[ . ]</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <H5 id="discount" style="margin-top: 0px; margin-bottom: 0px">固定折扣/折讓</H5>
+            </div>
+            <div class="panel-body">
+             鑰匙轉設定<br>
+             <span class="descr">折扣<br></span>
+             1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>折數<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[%]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+             <span class="eg">例：9折 折數輸入10<br><br></span>
+             <span class="descr">折讓<br></span>
+             1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>折讓金額<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+           </div>
+
+         </div>
+       </div>
+
+       <div class="col-sm-6 col-lg-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <H5 id="errorcode" style="margin-top: 0px; margin-bottom: 0px">錯誤代碼</H5>
+          </div>
+          <div class="panel-body">
+           <span class="descr">E001</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>作業未完成就轉動鑰匙<br>
+           處理：轉動鑰匙直到不叫也無錯誤訊息 完成前項作業<br><br>
+
+           <span class="descr">E008</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>沒有責任者<br>
+           處理：按收銀員鍵<br><br>
+
+           <span class="descr">E033</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金鍵鎖住<br>
+           處理：3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+           <span class="descr">E201</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>CF卡格式錯誤<br>
+           處理：<a href="#CF"><u>CF卡格式化</u></a><br><br>
+
+           <span class="descr">E015/印字器不動</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>印字器當機<br>
+           處理：按reset鍵 做<a href="#transient"><u>暫態</u></a><br><br>
+
+           <span class="descr">E026</span><br>
+           處理：3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>99000004或99000005<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0166（1066）<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>108<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+
+         </div>       
+       </div>
+     </div>
+
+     <div class="clearfix visible-sm-block"></div>
+     <div class="clearfix visible-lg-block"></div>
+
+     <div class="col-sm-6 col-lg-4 pro">
+      <div class="panel panel-primary pro">
+        <div class="panel-heading">
+          <H5 id="reset" style="margin-top: 0px; margin-bottom: 0px">歸零（總清機）</H5>
+        </div>
+        <div class="panel-body">
+         鑰匙轉OFF<br>
+         按住[存根送紙]不放<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>鑰匙轉設定<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>5秒後放開[存根送紙]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>螢幕出現一排0<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>00800<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+       </div>       
+     </div>
+   </div>
+
+   <div class="col-sm-6 col-lg-4 pro">
+    <div class="panel panel-primary pro">
+      <div class="panel-heading">
+        <H5 id="transient" style="margin-top: 0px; margin-bottom: 0px">暫態（故障排除）</H5>
+      </div>
+      <div class="panel-body">
+       鑰匙轉OFF<br>
+       按住[收執送紙]不放<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>鑰匙轉設定<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>5秒後放開[收執送紙]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>螢幕出現一排F<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+     </div>          
+   </div>
+ </div>
+
+ <div class="clearfix visible-sm-block"></div>
+
+ <div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="clearrecord" style="margin-top: 0px; margin-bottom: 0px">清GT帳</H5>
+    </div>
+    <div class="panel-body">
+     鑰匙轉OFF<br>
+     按住[收執送紙]不放<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>鑰匙轉設定<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>5秒後放開[收執送紙]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>螢幕出現一排F<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>8888888888<span class="descr">（10個8）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>代用券
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-lg-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="machinenum" style="margin-top: 0px; margin-bottom: 0px">設定台號/機號</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">設定台號</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0191<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>台號<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">設定機號</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0193<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>機號字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-sm-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="datetime" style="margin-top: 0px; margin-bottom: 0px">設定日期/時間</H5>
+    </div>
+    <div class="panel-body">
+     鑰匙轉設定<br>
+     1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>年/月/日<span class="descr">（4碼/2碼/2碼）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[X/日時]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[清除]<br>
+     1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>時/分<span class="descr">（24小時制）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[X/日時]
+   </div>
+
+ </div>
+</div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="mode" style="margin-top: 0px; margin-bottom: 0px">設定發票式/收據氏</H5>
+    </div>
+    <div class="panel-body">
+     鑰匙轉設定<br>
+     <span class="descr">發票式 </span>3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0522<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1430000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+     <span class="descr">收據式 </span>3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0522<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-sm-block"></div>
+<div class="clearfix visible-lg-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="CF" style="margin-top: 0px; margin-bottom: 0px">CF卡設定</H5>
+    </div>
+    <div class="panel-body">
+      鑰匙轉設定<br>
+
+      <span class="descr">CF功能開啟</span><br>
+      3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>3422<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>30000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+      <span class="descr">格式化</span><br>
+      7<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>270<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<br><br>
+
+      <span class="descr">收銀機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>CF</span><br>
+      7<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>70<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>欲傳檔案編號<span class="eg">（例：04）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[00]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<br><br>
+
+      <span class="descr">CF<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>收銀機</span><br>
+      7<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>20<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[代支]<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>/[金額]<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>選取欲傳檔案<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<br>
+      <span class="descr">（常用：04按鍵明細/32抬頭/900全收）</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="PLUspecial" style="margin-top: 0px; margin-bottom: 0px">品項特殊設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">佐料單品設定</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0166<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1<span class="descr">（佐料）</span>/0<span class="descr">（正常）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">品項設為零金額</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0566<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">品項設為負金額</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0566<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">品項設為免稅/含稅</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0366<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0<span class="descr">（免稅）</span>/1<span class="descr">（內含稅）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>品項PLU<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">輸入數量免按X</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0622<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>200<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-sm-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="scan" style="margin-top: 0px; margin-bottom: 0px">掃描設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">掃描單品開放乘數</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>01966<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0/2<span class="descr">（開/關）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-lg-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="keyboard" style="margin-top: 0px; margin-bottom: 0px">鍵盤設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">現金鍵重設</span><br>
+     4<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>001<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">換頁選單固定頁</span><br>
+     4<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>064<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>按鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="descr">印出紙張上有代碼XX02</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>XX02<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2000000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-sm-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="addPLU" style="margin-top: 0px; margin-bottom: 0px">增設PLU/部門</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">增設PLU</span><br>
+     4<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>XX063<span class="descr">（063為PLU代碼）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>按鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">增設部門</span><br>
+     4<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>XX051<span class="descr">（051為部門代碼）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>按鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="printsetup" style="margin-top: 0px; margin-bottom: 0px">查看設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">查看COM埠設定</span><br>
+     6<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>398<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+     <span class="descr">出單機列印按鍵名稱</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>10400000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>按鍵<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="clearfix visible-sm-block"></div>
+<div class="clearfix visible-lg-block"></div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="report" style="margin-top: 0px; margin-bottom: 0px">報表設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">報表品項明細（04）顯示折扣</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1522<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>4020<br><br>
+
+     <span class="descr">日/月報顯示</span><br>
+     3->小計->0129/0229<span class="descr">（日報/月報）</span>->小計-><br>
+     0/1<span class="descr">（日報/月報）</span>->小計<br>
+     11->現金<span class="descr"> 財務報表</span><br>
+     12->現金<span class="descr"> 按鍵明細</span><br>
+     14->現金<span class="descr"> PLU</span><br>
+     15->現金<span class="descr"> 部門</span><br>
+     17->現金<span class="descr"> 責任者</span><br>
+     19->現金<span class="descr"> 時段</span><br>
+     現金<span class="descr">（完成）（最多10項）</span>->小計
+   </div>
+
+ </div>
+</div>
+
+</div>
+
+</div>
+</div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+    $('.collapse.navbar-collapse').on('shown.bs.collapse', function(){
+      $('.dropdown').addClass('open');
+    });
+    </script>
+
+    <script>
+    $('.dropdown-menu a').on('click', function(){
+      $('#bs-example-navbar-collapse-1').collapse('hide');
+    });
+    </script>
+
+    <script>
+    function hidepro() {
+      $(".pro").hide();
+
+    }
+    </script>
+
+    <script>
+    function showpro() {
+      $(".pro").show();
+
+    }
+    </script>
+
+    <script>
+    function scroll_if_anchor(href) {
+      href = typeof(href) == "string" ? href : $(this).attr("href");
+
+    // If href missing, ignore
+    if(!href) return;
+
+    // You could easily calculate this dynamically if you prefer
+    var fromTop = 75;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+    // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+    var $target = $(href);
+
+    // Older browsers without pushState might flicker here, as they momentarily
+    // jump to the wrong position (IE < 10)
+    if($target.length) {
+      $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+      if(history && "pushState" in history) {
+        history.pushState({}, document.title, window.location.pathname + href);
+        return false;
+      }
+    }
+  }    
+
+
+// When our page loads, check to see if it contains and anchor
+scroll_if_anchor(window.location.hash);
+
+// Intercept all anchor clicks
+$("body").on("click", "a[href^='#']", scroll_if_anchor);
+</script>
+
+<script>
+hidepro();
+
+if (document.cookie=='pwd=111'){ 
+  $('ul.nav-pills li.active').removeClass('active');
+  $('#promode').addClass('active');
+  showpro();
+};
+
+$('#submitpwd').on ('click', function () {
+document.cookie="pwd="+$('#pwd').val()+";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+
+});
+
+</script>
+
+</body>
+</html>

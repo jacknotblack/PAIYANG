@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="Jack Cheng">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> 
+
+  <title>百揚資訊武功祕笈(Jack製作)</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+  <style>body {padding-top: 70px}</style>
+  <style>H2 { text-align: center }</style>
+  <style>H5 { text-align: center }</style>
+  <style>H3 { text-align: center }</style>
+  <style>div.panel-body {padding-left:5px;padding-right:5px}</style>
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script>
+      var shiftWindow = function() { scrollBy(0, -80) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+
+    </head>
+
+    <body>
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="workdoc.html">百揚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+             <li><a href="./POS.html">POS</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">二聯式收銀機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="3100.html"><H5>TK3100/3200</H5></a></li>
+                <li><a href="A520.html"><H5>A-520</H5></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">一聯式收據機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="SEG1.html"><H5>SE-G1</H5></a></li>
+                <li><a href="SES300.html"><H5>SE-S300</H5></a></li>
+                <li><a href="6600.html"><H5>AM6600</H5></a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">                                                                                                                
+      <div class="row"> 
+
+        <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="padding-top:0">
+          <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="position:fixed;left: 0;padding-right:0;height:85%;overflow:scroll">
+            <h3 style="margin-left:-15px;margin-top:10px">TK3200連結</h3>
+
+            <ul class="nav nav-pills nav-stacked" style="left:-13px; padding-right:0">
+              <li class="active" style="left:-13px; padding-right:0"><a onclick="showpro();" id="pro" data-toggle="tab" aria-expanded="false"><H5 style="margin-top: 0px;margin-bottom: 0px">專業版</H5></a></li>
+              <li class="" style="left:-13px; padding-right:0"><a onclick="hidepro();" id="client" data-toggle="tab" aria-expanded="true"><H5 style="margin-top: 0px;margin-bottom: 0px">客戶版</H5></a></li>
+            </ul>
+
+            <div class="btn-group-vertical btn-block" style="left:-13px; padding-right:0">
+              <a href="#enablemem" class="btn btn-primary pro" style="white-space: normal">開放記憶體</a>
+              <a href="#enableport" class="btn btn-primary pro" style="white-space: normal">開啟連接埠</a>
+              <a href="#enableport2" class="btn btn-primary pro" style="white-space: normal">設定第二台</a>
+              <a href="#itemlink" class="btn btn-primary pro" style="white-space: normal">商品連結</a>
+              <a href="#pericode" class="btn btn-primary pro" style="white-space: normal">外接代碼</a>
+              <a href="#platformscale" class="btn btn-primary pro" style="white-space: normal">磅秤專區</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content col-xs-8 col-sm-9 col-lg-10" style="padding-right:0;padding-left:0">
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="enablemem" style="margin-top: 0px; margin-bottom: 0px">開放記憶體</H5>
+              </div>
+              <div class="panel-body">
+                5<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>016<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>100<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+                5<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>036<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>500<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+                5<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>049<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>600<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="enableport" style="margin-top: 0px; margin-bottom: 0px">開啟連接埠</H5>
+              </div>
+              <div class="panel-body">
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0198/0298<span class="descr">（COM1/COM2）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>48000<a href="#pericode" class="descr"><u>（外接機器代碼）</u></a><span class="eg">（標籤機）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="enableport2" style="margin-top: 0px; margin-bottom: 0px">外接兩台設定</H5>
+              </div>
+              <div class="panel-body">
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0298<span class="descr">（COM2）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>48<span class="eg">1</span>00<a href="#pericode" class="descr"><u>（外接機器代碼第3碼改成1）</u></a><span class="eg">（標籤機）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+                <span class="descr">第一台另設</span><br>
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0493<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2001010000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+                <span class="descr">20（訂單編號）01（收銀機編號）01（外接機器編號）0000</span><br><br>
+
+                <span class="descr">第二台另設</span><br>
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>0593<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2101020000<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="itemlink" style="margin-top: 0px; margin-bottom: 0px">設定商品連結</H5>
+              </div>
+              <div class="panel-body">
+                3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1666<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>100/300/700<span class="descr">（/兩台各一張/共三張）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>PLU商品鍵<span class="descr">可連按</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br><br>
+
+                <span class="descr">設定完做<a href="3100.html#transient" class="descr"><u>暫態</u></a></span>          
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="pericode" style="margin-top: 0px; margin-bottom: 0px">外接機器代碼</H5>
+              </div>
+              <div class="panel-body">
+                感熱出單機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>08000<span class="descr">（baud rate：9600）</span><br>
+                感熱出單機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>08010<span class="descr">（baud rate：19200）</span><br>
+                撞針出單機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>18000<br>
+                標籤機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>48000<br>
+                三星標籤機<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>28000<br>
+                磅秤<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1000<br>
+                掃描器<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>22000<br>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 pro">
+            <div class="panel panel-primary pro">
+              <div class="panel-heading">
+                <H5 id="platformscale" style="margin-top: 0px; margin-bottom: 0px">磅秤相關設定</H5>
+              </div>
+              <div class="panel-body">
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+    $('.collapse.navbar-collapse').on('shown.bs.collapse', function(){
+      $('.dropdown').addClass('open');
+    });
+    </script>
+
+    <script>
+    $('.dropdown-menu a').on('click', function(){
+      $('#bs-example-navbar-collapse-1').collapse('hide');
+    });
+    </script>
+
+    <script>
+    function hidepro() {
+      $(".pro").hide();
+
+    }
+    </script>
+
+    <script>
+    function showpro() {
+      $(".pro").show();
+    }
+    </script>
+
+    <script>
+    function scroll_if_anchor(href) {
+      href = typeof(href) == "string" ? href : $(this).attr("href");
+
+    // If href missing, ignore
+    if(!href) return;
+
+    // You could easily calculate this dynamically if you prefer
+    var fromTop = 75;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+    // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+    var $target = $(href);
+
+    // Older browsers without pushState might flicker here, as they momentarily
+    // jump to the wrong position (IE < 10)
+    if($target.length) {
+      $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+      if(history && "pushState" in history) {
+        history.pushState({}, document.title, window.location.pathname + href);
+        return false;
+      }
+    }
+  }    
+
+
+// When our page loads, check to see if it contains and anchor
+scroll_if_anchor(window.location.hash);
+
+// Intercept all anchor clicks
+$("body").on("click", "a[href^='#']", scroll_if_anchor);
+</script>
+
+<script>
+hidepro();
+
+if (document.cookie=='pwd=111'){ 
+  $('ul.nav-pills li.active').removeClass('active');
+  $('#promode').addClass('active');
+  showpro();
+};
+
+$('#submitpwd').on ('click', function () {
+document.cookie="pwd="+$('#pwd').val()+";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+
+});
+
+</script>
+
+</body>
+</html>

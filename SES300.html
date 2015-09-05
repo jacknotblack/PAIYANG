@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="Jack Cheng">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> 
+
+  <title>百揚資訊武功祕笈(Jack製作)</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.css" rel="stylesheet">
+  <style>body {padding-top: 70px}</style>
+  <style>H2 { text-align: center }</style>
+  <style>H5 { text-align: center }</style>
+  <style>H3 { text-align: center }</style>
+<style>div.panel-body {padding-left:5px;padding-right:5px}</style>
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script>
+      var shiftWindow = function() { scrollBy(0, -80) };
+      window.addEventListener("hashchange", shiftWindow);
+      function load() { if (window.location.hash) shiftWindow(); }
+      </script>
+
+    </head>
+
+    <body>
+     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="workdoc.html">百揚</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            
+             <li><a href="./POS.html">POS</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">二聯式收銀機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="3100.html"><H5>TK3100/3200</H5></a></li>
+                <li class="pro"><a href="TK3200peripheral.html"><H5>3200連結</H5></a></li>
+                <li><a href="A520.html"><H5>A-520</H5></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">一聯式收據機<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="SEG1.html"><H5>SE-G1</H5></a></li>
+                <li><a href="6600.html"><H5>AM6600</H5></a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container-fluid">                                                                                                                
+  <div class="row"> 
+
+    <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="padding-top:0">
+          <div class="container-fluid col-xs-4 col-sm-3 col-lg-2" style="position:fixed;left: 0;padding-right:0;height:85%;overflow:scroll">
+            <h3 style="margin-left:-25px;margin-top:10px">SE-S300</h3>
+
+             <ul class="nav nav-pills nav-stacked" style="left:-13px; padding-right:0" id="propill">
+              <li class="active" style="left:-13px; padding-right:0" id="clientmode"><a onclick="hidepro();"  data-toggle="tab" aria-expanded="true"><H5 style="margin-top: 0px;margin-bottom: 0px">客戶版</H5></a></li>
+              <li class="disabled" style="left:-13px; padding-right:0" id="promode"><a aria-expanded="false" ><H5 style="margin-top: 0px;margin-bottom: 0px">專業版</H5></a></li>
+              
+            </ul>
+
+            <form class="form" role="form" style="padding-right:0">
+
+              <div class="form-group">
+                <input type="password" class="form-control" id="pwd" placeholder="密碼" style="margin-left:-13px; padding-right:0">
+                                    
+                <button type="submit" id="submitpwd" class="btn btn-default btn-block" style="margin-left:-13px"><H5 style="margin-top: 0px;margin-bottom: 0px">送出</H5></button>
+              </div>
+            </form> 
+
+            <div class="btn-group-vertical btn-block" style="left:-13px; padding-right:0">
+              <a href="#itemname" class="btn btn-info" style="white-space: normal">部門中文</a>
+              <a href="#scan" class="btn btn-primary pro" style="white-space: normal">掃描設定</a>
+              <a href="#print" class="btn btn-info" style="white-space: normal">收據列印</a>
+              <a href="#report" class="btn btn-primary pro" style="white-space: normal">讀帳設定</a>
+              <a href="#correction" class="btn btn-info" style="white-space: normal">更正/取消</a>
+            </div>
+          </div>
+        </div>
+
+  <div class="content col-xs-8 col-sm-9 col-lg-10" style="padding-right:0;padding-left:0">
+
+    <div class="col-sm-6 col-lg-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <H5 id="itemname" style="margin-top: 0px; margin-bottom: 0px">部門中文</H5>
+        </div>
+        <div class="panel-body">
+         鑰匙轉設定<br>
+                2<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>部門<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>C<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>統編<span class="descr">直到螢幕顯示內碼</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>字碼<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>[現金]<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<br>
+                <span class="eg">
+                  例：(蛋糕)179.74.191.124.<br>
+                </span>
+        </div>
+      </div>
+    </div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="scan" style="margin-top: 0px; margin-bottom: 0px">掃描設定</H5>
+    </div>
+    <div class="panel-body">
+     <span class="descr">掃描單品開放乘數</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>01966<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>2/0<span class="descr">（開/關）</span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>現金<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計
+   </div>
+
+ </div>
+</div>
+
+<div class="col-sm-6 col-lg-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <H5 id="print" style="margin-top: 0px; margin-bottom: 0px">收據列印設定</H5>
+        </div>
+        <div class="panel-body">
+          <span class="descr">不印收據</span><br>
+        [收據開關]連按直到螢幕顯示no reciept<br><br>
+
+        <span class="descr">列印收據</span><br>
+        [收據開關]連按直到螢幕顯示issue reciept
+        </div>
+      </div>
+    </div>
+
+<div class="col-sm-6 col-lg-4 pro">
+  <div class="panel panel-primary pro">
+    <div class="panel-heading">
+      <H5 id="report" style="margin-top: 0px; margin-bottom: 0px">讀帳設定</H5>
+    </div>
+    <div class="panel-body">
+      <span class="descr">報表品項明細（04）顯示折扣</span><br>
+     3<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>1522<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>小計<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>4020<br><br>
+
+     <span class="descr">日/月報顯示</span><br>
+     3->小計->0429/0529<span class="descr">（日報/月報）</span>->小計-><br>
+     0/1<span class="descr">（日報/月報）</span>->小計<br>
+     11->現金<span class="descr"> 財務報表</span><br>
+     12->現金<span class="descr"> 按鍵明細</span><br>
+     14->現金<span class="descr"> PLU</span><br>
+     15->現金<span class="descr"> 部門</span><br>
+     17->現金<span class="descr"> 責任者</span><br>
+     19->現金<span class="descr"> 時段</span><br>
+     現金<span class="descr">（完成）（最多10項）</span>->小計
+   </div>
+
+ </div>
+</div>
+
+<div class="col-sm-6 col-lg-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <H5 id="correction" style="margin-top: 0px; margin-bottom: 0px">更正/交易取消</H5>
+        </div>
+        <div class="panel-body">
+          <span class="descr">交易取消</span><br>
+        小計->立即更正<br><br>
+
+        <span class="descr">已輸入品項更正</span><br>
+        連按[回覽]直到顯示欲刪除之品項->隔項更正
+        </div>
+      </div>
+    </div>
+
+    </div>
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script>
+    $('.collapse.navbar-collapse').on('shown.bs.collapse', function(){
+      $('.dropdown').addClass('open');
+    });
+    </script>
+
+    <script>
+$('.dropdown-menu a').on('click', function(){
+    $('#bs-example-navbar-collapse-1').collapse('hide');
+});
+</script>
+
+ <script>
+    function hidepro() {
+      $(".pro").hide();
+    }
+    </script>
+
+    <script>
+    function showpro() {
+      $(".pro").show();
+    }
+    </script>
+<script>
+  function scroll_if_anchor(href) {
+    href = typeof(href) == "string" ? href : $(this).attr("href");
+
+    // If href missing, ignore
+    if(!href) return;
+
+    // You could easily calculate this dynamically if you prefer
+    var fromTop = 75;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+    // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+    var $target = $(href);
+
+    // Older browsers without pushState might flicker here, as they momentarily
+    // jump to the wrong position (IE < 10)
+    if($target.length) {
+        $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+        if(history && "pushState" in history) {
+            history.pushState({}, document.title, window.location.pathname + href);
+            return false;
+        }
+    }
+}    
+
+
+// When our page loads, check to see if it contains and anchor
+scroll_if_anchor(window.location.hash);
+
+// Intercept all anchor clicks
+$("body").on("click", "a[href^='#']", scroll_if_anchor);
+</script>
+
+<script>
+hidepro();
+
+if (document.cookie=='pwd=111'){ 
+  $('ul.nav-pills li.active').removeClass('active');
+  $('#promode').addClass('active');
+  showpro();
+};
+
+$('#submitpwd').on ('click', function () {
+document.cookie="pwd="+$('#pwd').val()+";expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/;";
+
+});
+
+</script>
+
+  </body>
+  </html>
